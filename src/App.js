@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
 import "./App.css";
-import Menu from "./components/MenuComponent";
+import Main from "./components/MainComponent";
 import { DISHES } from "./shared/dishes";
+import { BrowserRouter } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -13,14 +13,11 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Ristorante</NavbarBrand>
-          </div>
-        </Navbar>
-        <Menu dishes={this.state.dishes} />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Main />
+        </div>
+      </BrowserRouter>
     );
   }
 }
