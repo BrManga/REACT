@@ -8,8 +8,7 @@ import {
   Label,
   Input,
   Col,
-  FormFeedback,
-  Row
+  FormFeedback
 } from "reactstrap";
 import { Link } from "react-router-dom";
 

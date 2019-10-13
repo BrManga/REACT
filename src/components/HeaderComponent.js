@@ -24,6 +24,7 @@ class Header extends Component {
 
     this.toggleNav = this.toggleNav.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
 
     this.state = {
       isNavOpen: false,
@@ -39,6 +40,18 @@ class Header extends Component {
     this.setState({
       isNavOpen: !this.state.isNavOpen
     });
+  }
+  handleLogin(event) {
+    this.toggleModal();
+    event.preventDefault();
+    window.alert(
+      "Username: " +
+        this.username.value +
+        " Password: " +
+        this.password.value +
+        " Remember: " +
+        this.remember.checked
+    );
   }
 
   render() {
@@ -103,6 +116,7 @@ class Header extends Component {
             </div>
           </div>
         </Jumbotron>
+
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
           <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
           <ModalBody>
