@@ -32,6 +32,7 @@ class Main extends Component {
         />
       );
     };
+
     const DishWithId = ({ match }) => {
       return (
         <DishDetail
@@ -46,27 +47,33 @@ class Main extends Component {
         />
       );
     };
+
     return (
       <div>
         <Header />
-        <Switch>
-          <Route path="/home" component={HomePage} />
-          <Route
-            exact
-            path="/menu"
-            component={() => <Menu dishes={this.props.dishes} />}
-          />
-          <Route path="/menu/:dishId" component={DishWithId} />
-          <Route
-            path="/aboutus"
-            component={() => <About leaders={this.props.leaders} />}
-          />
-          <Route exact path="/contactus" component={Contact} />
-          <Redirect to="/home" />
-        </Switch>
+        <div>
+          <Switch>
+            <Route path="/home" component={HomePage} />
+            <Route
+              exact
+              path="/aboutus"
+              component={() => <About leaders={this.props.leaders} />}
+            />
+            } />
+            <Route
+              exact
+              path="/menu"
+              component={() => <Menu dishes={this.props.dishes} />}
+            />
+            <Route path="/menu/:dishId" component={DishWithId} />
+            <Route exact path="/contactus" component={Contact} />} />
+            <Redirect to="/home" />
+          </Switch>
+        </div>
         <Footer />
       </div>
     );
   }
 }
+
 export default withRouter(connect(mapStateToProps)(Main));
