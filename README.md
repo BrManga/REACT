@@ -10,3 +10,5 @@
 * Fetching and saving data to json.server file
 * React-animation-components
 * React-transition-group
+
+Note: You should first run json-server to make it work
