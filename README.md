@@ -7,3 +7,6 @@
 * Redux
 * Router
 * Reactstrap
+* Fetching and saving data to json.server file
+* React-animation-components
+* React-transition-group
