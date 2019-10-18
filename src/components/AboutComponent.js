@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import RenderLeader from "./RenderLeader";
+import { Fade, Stagger } from "react-animation-components";
 
 function About(props) {
   console.log(props.leaders);
@@ -88,9 +89,13 @@ function About(props) {
           <h2>Corporate Leadership</h2>
         </div>
         <div className="col-12">
-          <Media list>
-            <RenderLeader leaders={props.leaders} />
-          </Media>
+          <Stagger in>
+            <Media list>
+              <Fade minDelay in>
+                <RenderLeader leaders={props.leaders} />
+              </Fade>
+            </Media>
+          </Stagger>
         </div>
       </div>
     </div>
